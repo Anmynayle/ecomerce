@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const productSlice = createSlice({
     name:'product',
-    initialState:'null',
+    initialState:null,
     reducers:{
       setProduct: (state, actions)=>actions.payload
     }

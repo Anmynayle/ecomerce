@@ -1,0 +1,64 @@
+.card__home{
+ width: 400px;
+ height: 500px;
+ border: 1px solid  rgb(175, 175, 175);
+ border-radius: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.card__home__header{
+    border-bottom: 1px solid rgb(175, 175, 175);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  
+}
+.card__home__header img{
+    width:200px;
+    height: 200px;
+    margin-bottom: 20px;
+   
+}
+
+.card_home_body{
+    margin: 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+.card_home_name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card_home_price_label{
+    color: rgb(175, 175, 175) ;
+}
+
+.card_home_price_value{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card_home_btn{
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   border: none;
+   background-color: brown;
+   color: white;
+   align-self: flex-end;
+}
+
+button i{
+    color: white;
+    font-size: 30px;
+
+}
