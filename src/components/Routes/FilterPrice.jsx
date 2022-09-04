@@ -1,10 +1,14 @@
 import axios from 'axios'
 import React from 'react'
 import { useState,useEffect } from 'react'
-
+import { useSelector } from 'react-redux'
 const FilterPrice = () => {
 
 const [category, setCategory] = useState()
+const [prueba, setPrueba] = useState()
+
+const products = useSelector(state =>state.product)
+
 
 useEffect(() => {
   const urlcat=`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories`
@@ -13,19 +17,28 @@ useEffect(() => {
   .catch(err=> console.log(err))
 }, [])
 
-
-const handleFilter = (name) => {
-  let arrProducts=[];
-     category.forEach(option => {
-      if(category.includes(name)){
-        arrProducts.push(option)
-      }
-      setSearchProduct(arrProducts)
-     });
-
+const handleFilter = (name) =>{
+  let arrProductsCategory=[];
+  products.forEach(product => {
+   if(product.category.name.includes(name)){
+     arrProductsCategory.push(product)
+   }
+   setPrueba(arrProductsCategory)
+  });
 }
+console.log(prueba)
 
-// console.log(category)
+//  const handleFilter = (name) => {
+//    let arrProductsFilter=[];
+//       category.forEach(option => {
+//        if(category.includes(name)){
+//          arrProductsFilter.push(option)
+//        }
+//        setCategory(arrProductsFilter)
+//       });
+
+//  }
+
 
   return (
     <div className='filter__Types'>
