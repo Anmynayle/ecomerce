@@ -10,7 +10,7 @@ const navigate = useNavigate()
 const handleClick=()=>{
     navigate(`/product/${produc.id}`)
 }
-//  console.log(produc)
+
 
   return (
 
