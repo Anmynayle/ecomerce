@@ -20,12 +20,13 @@ const [searchProduct, setSearchProduct] = useState()
 
 const products =useSelector(state => state.product)
   
-console.log(products)
+// console.log(products)
 return (
     <div className='home'>
       <Search searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
       <div className="homeContainerCard">
-       {!searchProduct ? <CardContainer products={products}/> :<CardContainer products={searchProduct}/> }
+   
+        {!searchProduct  ? <CardContainer products={products}/> :<CardContainer products={searchProduct}/> } 
       
       </div>
     </div>

@@ -12,15 +12,16 @@ import Layout from './components/Routes/share/Layout'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchProduct, setSearchProduct] = useState()
+
 
   return (
     <div className='App'>
      
       <Routes>
-      <Route element={<Layout />}>
+      <Route element={<Layout searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home  searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
         <Route path='/product/:id' element={<ProductDetail/>}/>
       </Route>
       <Route element={<ProtectedRoutes />}>
