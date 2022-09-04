@@ -13,7 +13,19 @@ useEffect(() => {
   .catch(err=> console.log(err))
 }, [])
 
-console.log(category)
+
+const handleFilter = (name) => {
+  let arrProducts=[];
+     category.forEach(option => {
+      if(category.includes(name)){
+        arrProducts.push(option)
+      }
+      setSearchProduct(arrProducts)
+     });
+
+}
+
+// console.log(category)
 
   return (
     <div className='filter__Types'>
@@ -40,7 +52,7 @@ console.log(category)
          <ul className='filter__list'>
          {
           category?.map(cat=>(
-            <li key={cat.id}>{cat.name}</li>
+            <li onClick={()=>handleFilter(cat.name)} key={cat.id}>{cat.name}</li>
           ))
          }
          </ul>

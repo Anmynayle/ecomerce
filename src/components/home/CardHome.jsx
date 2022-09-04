@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import './CardHome.css'
 
 
-const CardHome = ({produc}) => {
+const CardHome = ({produc,productSearch}) => {
 
 const navigate = useNavigate()
 
 const handleClick=()=>{
     navigate(`/product/${produc.id}`)
 }
-
-//console.log(produc)
+//  console.log(produc)
 
   return (
 
