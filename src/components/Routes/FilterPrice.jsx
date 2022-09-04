@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useSelector } from 'react-redux'
-const FilterPrice = () => {
+const FilterPrice = ({searchProduct, setSearchProduct}) => {
 
 const [category, setCategory] = useState()
 const [prueba, setPrueba] = useState()
@@ -23,11 +23,11 @@ const handleFilter = (name) =>{
    if(product.category.name.includes(name)){
      arrProductsCategory.push(product)
    }
-   setPrueba(arrProductsCategory)
+   setSearchProduct(arrProductsCategory)
   });
 }
-console.log(prueba)
 
+console.log(searchProduct)
 //  const handleFilter = (name) => {
 //    let arrProductsFilter=[];
 //       category.forEach(option => {

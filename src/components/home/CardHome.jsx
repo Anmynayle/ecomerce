@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './CardHome.css'
 
 
-const CardHome = ({produc,productSearch}) => {
+const CardHome = ({produc}) => {
 
 const navigate = useNavigate()
 

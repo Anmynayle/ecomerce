@@ -17,7 +17,7 @@ const handleSubmit = () =>{
       setSearchProduct(arrProducts)
      });
 }
-console.log(searchProduct)
+// console.log(searchProduct)
 
   return (
     <div className='search' >
