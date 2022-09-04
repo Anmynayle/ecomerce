@@ -28,7 +28,7 @@ const ProductDescriptions = ({ productInfo }) => {
       </div>
 
       <div className="product-info">
-        <div className="col1">50</div>
+        <div className="col1">carrusel</div>
         <div className="col2">
           <h2>{productInfo?.title}</h2>
           <div className="product-data">
@@ -57,7 +57,7 @@ const ProductDescriptions = ({ productInfo }) => {
       <div className="suggestions">
         <h2>Discover similar items</h2>
         <div className="article-similar-container">
-          
+
         </div>
 
       </div>
