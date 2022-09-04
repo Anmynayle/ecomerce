@@ -41,7 +41,7 @@ const ProductDescriptions = ({ productInfo }) => {
               <div className="quanty">
                 <h3>quanty</h3>
                 <div className="option-quanty">
-                  <button>-</button>
+                  <button onClick={handleMinus}>-</button>
                   <input type="text" />
                   <button>+</button>
                 </div>
