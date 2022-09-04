@@ -11,7 +11,7 @@ const Search = ({searchProduct, setSearchProduct}) => {
 const handleSubmit = () =>{
      let arrProducts=[];
      products.forEach(product => {
-      if(product.title.includes(search.value)){
+      if(product.title.toLowerCase().includes(search.value)){
         arrProducts.push(product)
       }
       setSearchProduct(arrProducts)
