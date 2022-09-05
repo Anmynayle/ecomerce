@@ -5,3 +5,33 @@
     justify-content: center;
     margin: 0;
 }
+
+.container-cart-none{
+    margin-right: -310px;
+    transition: 0.8s;
+}
+
+.container-cart{
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+  
+}
+.produc{
+    border: 1px solid black;
+    width: 300px;
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    padding: 4.5em 2em;
+    backdrop-filter: blur(10px);
+    transition: 0.8s;
+
+}
+

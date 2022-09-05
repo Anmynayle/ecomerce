@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const FilterPrice = ({searchProduct, setSearchProduct}) => {
 
 const [category, setCategory] = useState()
-const [prueba, setPrueba] = useState()
+
 
 const products = useSelector(state =>state.product)
 
@@ -28,14 +28,7 @@ const handleFilter = (name) =>{
  }
 
 
-//  const handleFilter = (name) => {
-//    let arrProductsFilter=[];
-//       category.forEach(option => {
-//        if(category.includes(name)){
-//          arrProductsFilter.push(option)
-//        }
-//        setCategory(arrProductsFilter)
-//       });
+
 
  
 

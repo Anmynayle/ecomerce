@@ -5,11 +5,17 @@ import './CardHome.css'
 
 const CardHome = ({produc}) => {
 
+
+
+ 
 const navigate = useNavigate()
+
+
 
 const handleClick=()=>{
     navigate(`/product/${produc.id}`)
 }
+
 
 
   return (

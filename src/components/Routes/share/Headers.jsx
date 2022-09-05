@@ -2,13 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Header from  './Header.css'
 
-const Headers = ({setSidenBarHidden, sidenBarHidden}) => {
+const Headers = ({setSidenBarHidden, sidenBarHidden, cartHidden, setCartHidden}) => {
 
 
 const handleSideBar= () => {
   setSidenBarHidden(!sidenBarHidden)
 }
 
+const handleCart= () => {
+  console.log(cartHidden)
+  setCartHidden(!cartHidden)
+}
+
+console.log(cartHidden)
   return (
     <header className="header">
       <div className="header__top">
@@ -33,7 +39,7 @@ const handleSideBar= () => {
           </li>
           <div className="line"/>
           <li className="header__item">
-          <i className='bx bx-cart-add'></i>
+          <i onClick={handleCart} className='bx bx-cart-add'></i>
           </li>
           <div className="line"/>
         </ul>

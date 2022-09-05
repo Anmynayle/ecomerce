@@ -7,14 +7,21 @@ import { useState } from 'react'
 const Layoud = ({searchProduct, setSearchProduct}) => {
 
   const [sidenBarHidden, setSidenBarHidden] = useState(false)
+  const [cartHidden, setCartHidden] = useState(true)
 
   // console.log(sidenBarHidden)
   return (
     <div className='layout'>
-        <Headers  sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}/>
+        <Headers  cartHidden={cartHidden} setCartHidden={setCartHidden} sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}/>
         <SideBar sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}
                   searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
+       
+        <div className={`produc ${cartHidden ? 'container-cart-none' : ''}`}>
+          <h1>hola</h1>
+        </div>
+    
         <div className="main">
+          
         <Outlet/>
         </div>
     </div>

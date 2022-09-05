@@ -8,7 +8,7 @@ const ProductDescriptions = ({ productInfo }) => {
   const [count, setCount] = useState(1)
 
   const handlePlus = () => setCount(count + 1)
-
+  
 
   const handleMinus = () => {
     if (count - 1 >= 1) {
@@ -16,7 +16,7 @@ const ProductDescriptions = ({ productInfo }) => {
     }
   }
 
-  console.log(productInfo)
+  // console.log(productInfo)
   return (
 
     <section className='product__descri'>
@@ -42,8 +42,8 @@ const ProductDescriptions = ({ productInfo }) => {
                 <h3>quanty</h3>
                 <div className="option-quanty">
                   <button onClick={handleMinus}>-</button>
-                  {count}
-                  {/* <input type="text" /> */}
+                
+                  <input type="text"/>
                   <button onClick={handlePlus}>+</button>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const ProductDescriptions = ({ productInfo }) => {
       <div className="suggestions">
         <h2>Discover similar items</h2>
         <div className="article-similar-container">
-
+         
         </div>
 
       </div>
@@ -66,22 +66,6 @@ const ProductDescriptions = ({ productInfo }) => {
 
 
 
-      {/* <h2 className='product__descri_name'>{productInfo?.title}</h2>
-      <p className='product__Info__description'>{productInfo?.descriptiom}</p>
-      <div className="product__info__body">
-        <article className='product_info_price'>
-          <h3 className='product__info_price_label'>Price</h3>
-          <span className='product_info_price_value'>{productInfo?.price}</span>
-        </article>
-        <article className='product_info_quanty'>
-          <h3 className='product_info_quanty_label'>Quantity</h3>
-          <div className='product_info_quanty__product'>
-            <button onClick={handleMinus}>-</button>
-            <div>{count}</div>
-            <button onClick={handlePlus}>+</button>
-          </div>
-        </article>
-      </div> */}
     </section>
   )
 }
