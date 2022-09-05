@@ -7,20 +7,17 @@ import Search from '../home/Search'
 import './Home.css'
 
 
-const Home = () => {
+const Home = ({searchProduct,setSearchProduct}) => {
 
-const [searchProduct, setSearchProduct] = useState()
 
    const dispatch = useDispatch()
 
+  const products =useSelector(state => state.product)
     useEffect(() => {
       dispatch(getAllProduct())
     }, [])
     
 
-const products =useSelector(state => state.product)
-  
-// console.log(products)
 return (
     <div className='home'>
       <Search searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
@@ -32,5 +29,5 @@ return (
     </div>
   )
 }
-
+//prueba
 export default Home

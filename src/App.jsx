@@ -21,7 +21,7 @@ function App() {
       <Routes>
       <Route element={<Layout searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/' element={<Home  searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
+        <Route path='/' element={<Home searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
         <Route path='/product/:id' element={<ProductDetail/>}/>
       </Route>
       <Route element={<ProtectedRoutes />}>

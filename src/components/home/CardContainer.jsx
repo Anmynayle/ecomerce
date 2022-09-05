@@ -2,7 +2,7 @@ import React from 'react'
 import CardHome from './CardHome'
 
 const CardContainer = ({products}) => {
-console.log(products)
+//console.log(products)
     return (
     <div className="homeContainerCard"> {
         products?.map(produc =>(

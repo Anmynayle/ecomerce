@@ -19,15 +19,15 @@ useEffect(() => {
 
 const handleFilter = (name) =>{
   let arrProductsCategory=[];
-  products.forEach(product => {
-   if(product.category.name.includes(name)){
-     arrProductsCategory.push(product)
-   }
+   products.forEach(product => {
+    if(product.category.name.includes(name)){
+      arrProductsCategory.push(product)
+    }
    setSearchProduct(arrProductsCategory)
-  });
-}
+   });
+ }
 
-console.log(searchProduct)
+
 //  const handleFilter = (name) => {
 //    let arrProductsFilter=[];
 //       category.forEach(option => {
@@ -37,7 +37,7 @@ console.log(searchProduct)
 //        setCategory(arrProductsFilter)
 //       });
 
-//  }
+ 
 
 
   return (
