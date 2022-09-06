@@ -45,6 +45,7 @@ const handleFilter = (name) =>{
   //      }
   // setSearchProduct(arrProductsPrice)
   //  });
+  //hola
  }
 
 console.log(searchProduct)
