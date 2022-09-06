@@ -28,7 +28,7 @@ console.log(productCat)
 
   return (
 
-    <div className="article-similar-container">
+    <div className="homeContainerCard">
       
       {
         productCat?.map(procat => {
