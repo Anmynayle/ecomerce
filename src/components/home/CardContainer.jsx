@@ -4,7 +4,6 @@ import CardHome from './CardHome'
 const CardContainer = ({products}) => {
 
 
-
     return (
     <div className="homeContainerCard"> {
         products?.map(produc =>(

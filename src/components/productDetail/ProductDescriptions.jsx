@@ -57,7 +57,6 @@ const ProductDescriptions = ({ productInfo }) => {
 
       <div className="suggestions">
         <h2>Discover similar items</h2>
-
       </div>
 
     </section>
