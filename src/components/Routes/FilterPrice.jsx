@@ -34,9 +34,11 @@ const handleFilter = (name) =>{
 
  const handleFilterPrice = e =>{
   e.preventDefault()
-     let searchPrice= (e.target.from.value)
+    let searchPrice= (e.target.from.value)
+    let valueint = parseInt(searchPrice, 10);
     let arrProductsPrice=[];
-    let newarr = products.filter(pro => pro.price <= searchPrice);
+    let newarr = products.filter(pro => pro.price <= valueint);
+    console.log(newarr.length)
     setSearchProduct(newarr)
   //   products.forEach(producPrice => {
   //   if(producPrice.price.includes(searchPrice)){
