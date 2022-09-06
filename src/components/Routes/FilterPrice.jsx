@@ -21,37 +21,47 @@ useEffect(() => {
   .catch(err=> console.log(err))
 }, [])
 
-// const handleFilter = (name) =>{
-//   let arrProductsCategory=[];
-//    products.forEach(product => {
-//     if(product.category.name.includes(name)){
-//       arrProductsCategory.push(product)
-//     }
-//    setSearchProduct(arrProductsCategory)
-//    });
-//  }
-
-
- const handleFilterPrice = e =>{
-  e.preventDefault()
-    let searchPrice= (e.target.from.value)
-    let arrProductsPrice=[];
-<<<<<<< HEAD
-    let newarr = products.filter(pro => pro.price >= searchPrice);
-=======
-    let newarr = products.filter(pro => pro.price <= parseInt(searchPrice, 10));
-    console.log(newarr.length)
->>>>>>> 5c2aa3f3d297527097044783ef1ea1903febe116
-    setSearchProduct(newarr)
-  //   products.forEach(producPrice => {
-  //   if(producPrice.price.includes(searchPrice)){
-  //     arrProductsPrice.push(producPrice)
-  //      }
-  // setSearchProduct(arrProductsPrice)
-  //  });
-  //hola
+const handleFilter = (name) =>{
+  let arrProductsCategory=[];
+   products.forEach(product => {
+    if(product.category.name.includes(name)){
+      arrProductsCategory.push(product)
+    }
+   setSearchProduct(arrProductsCategory)
+   });
  }
- //holaaa
+
+
+  const handleFilterPrice = e => {
+    e.preventDefault()
+
+    if (e.target.from.value && !e.target.to.value) {
+
+      let searchPrice = (e.target.from.value)
+      let arrProductsPrice = [];
+      let newarr = products.filter(pro => pro.price <= parseInt(searchPrice, 10));
+      console.log(newarr.length)
+      setSearchProduct(newarr)
+
+    } else if (e.target.from.value && e.target.to.value) {
+      let searchPriceFrom = (e.target.from.value)
+      let searchPriceTo = (e.target.to.value)
+      let arrProductsPrice = [];
+      // let newarr = products.filter(pro => pro.price <= parseInt(searchPriceFrom, 10) &&  parseInt(searchPriceTo, 10);
+      console.log(newarr.length)
+      setSearchProduct(newarr)
+
+    } else if (!e.target.from.value && e.target.to.value) {
+      let searchPrice = (e.target.to.value)
+      let arrProductsPrice = [];
+      let newarr = products.filter(pro => pro.price >= parseInt(searchPrice, 10));
+      console.log(newarr.length)
+      setSearchProduct(newarr)
+    }
+
+
+  }
+
 
 console.log(searchProduct)
   return (
@@ -69,7 +79,7 @@ console.log(searchProduct)
         <label htmlFor="">
           <span>To:</span>
         </label>
-        <input type="number" />
+        <input id='to' type="number" />
       </div>
       <button className='btn_filter'>Filter Price</button>
       </form>
@@ -77,11 +87,11 @@ console.log(searchProduct)
         <h2>Category</h2>
          <div className="filter__line" />
          <ul className='filter__list'>
-         {/* {
+          {
           category?.map(cat=>(
             <li onClick={()=>handleFilter(cat.name)} key={cat.id}>{cat.name}</li>
           ))
-         } */}
+         } 
          </ul>
          </div>
     </div>
