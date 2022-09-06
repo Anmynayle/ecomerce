@@ -35,9 +35,8 @@ const handleFilter = (name) =>{
  const handleFilterPrice = e =>{
   e.preventDefault()
     let searchPrice= (e.target.from.value)
-    let valueint = parseInt(searchPrice, 10);
     let arrProductsPrice=[];
-    let newarr = products.filter(pro => pro.price <= valueint);
+    let newarr = products.filter(pro => pro.price <= parseInt(searchPrice, 10));
     console.log(newarr.length)
     setSearchProduct(newarr)
   //   products.forEach(producPrice => {
