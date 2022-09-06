@@ -34,9 +34,14 @@ useEffect(() => {
 
  const handleFilterPrice = e =>{
   e.preventDefault()
-     let searchPrice= (e.target.from.value)
+    let searchPrice= (e.target.from.value)
     let arrProductsPrice=[];
+<<<<<<< HEAD
     let newarr = products.filter(pro => pro.price >= searchPrice);
+=======
+    let newarr = products.filter(pro => pro.price <= parseInt(searchPrice, 10));
+    console.log(newarr.length)
+>>>>>>> 5c2aa3f3d297527097044783ef1ea1903febe116
     setSearchProduct(newarr)
   //   products.forEach(producPrice => {
   //   if(producPrice.price.includes(searchPrice)){
@@ -44,6 +49,7 @@ useEffect(() => {
   //      }
   // setSearchProduct(arrProductsPrice)
   //  });
+  //hola
  }
  //holaaa
 
