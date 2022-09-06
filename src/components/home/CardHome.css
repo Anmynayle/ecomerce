@@ -11,18 +11,23 @@
 
 .card__home__header{
     border-bottom: 1px solid rgb(175, 175, 175);
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
     overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    /* margin-top: 20px;
+    margin-bottom: 10px; */
+    padding: 20px;
+    height: 220px;
   
 }
 .card__home__header img{
-    width:200px;
+    /* width:200px;
     height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
    
 }
 

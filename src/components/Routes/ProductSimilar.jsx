@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
+import CardHome from '../home/CardHome'
+import './Productsimilar.css'
 
 const ProductSimilar = ({productInfo}) => {
 
@@ -26,15 +27,22 @@ useEffect(() => {
 console.log(productCat)
 
   return (
-    <div>
+
+    <div className="article-similar-container">
+      
       {
-        productCat?.map(e => {
-          if(productInfo.title !== e.title){
-            return <h1>{e.title}</h1>
-          }
+        productCat?.map(procat => {
+          if(productInfo.title !== procat.title){
+             return  <div className='card_simi'>  <CardHome
+             key={procat.id}
+             produc={procat}
+            /></div>
+      }
         })
       }
+         
     </div>
+  
   )
 }
 

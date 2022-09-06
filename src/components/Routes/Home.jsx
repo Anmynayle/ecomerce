@@ -21,11 +21,7 @@ const Home = ({searchProduct,setSearchProduct}) => {
 
 return (
     <div className='home'>
-      {/* <div className="container-cart">
-        <div className='produc'>
-          <h1>hola</h1>
-        </div>
-      </div> */}
+    
       <Search searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
       <div className="homeContainerCard">
    

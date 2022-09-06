@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './components/Routes/Home'
@@ -9,11 +9,30 @@ import { NavLink } from 'react-router-dom'
 import Headers from './components/Routes/share/Headers'
 import ProtectedRoutes from './components/Routes/share/ProtectedRoutes'
 import Layout from './components/Routes/share/Layout'
+import axios from 'axios'
 
 
 function App() {
+  
   const [searchProduct, setSearchProduct] = useState()
 
+
+  useEffect(() => {
+    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+    // const obj = {
+    //   firstName: 'ambar',
+    //   lastName: 'aguilar',
+    //   email: 'nayle27@gmail.com',
+    //   password: '2704Amb',
+    //   phone: '1234568795',
+    //   role: 'admin'
+    // }
+    // axios.post(URL, obj)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.log(err))
+  }, [])
+
+  
 
   return (
     <div className='App'>

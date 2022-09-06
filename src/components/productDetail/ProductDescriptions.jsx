@@ -39,11 +39,11 @@ const ProductDescriptions = ({ productInfo }) => {
                 <h3>$ {productInfo?.price}</h3>
               </div>
               <div className="quanty">
-                <h3>quanty</h3>
+                <h3>Quanty</h3>
                 <div className="option-quanty">
                   <button onClick={handleMinus}>-</button>
-                
-                  <input type="text"/>
+                  <div className='val'>{count}</div>
+                  {/* <input type="text"/> */}
                   <button onClick={handlePlus}>+</button>
                 </div>
               </div>
@@ -57,14 +57,8 @@ const ProductDescriptions = ({ productInfo }) => {
 
       <div className="suggestions">
         <h2>Discover similar items</h2>
-        <div className="article-similar-container">
-         
-        </div>
 
       </div>
-
-
-
 
     </section>
   )
