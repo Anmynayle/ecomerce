@@ -1,0 +1,76 @@
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.login__form{
+    border: 1px solid black;
+    width: 450px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 0 10px;
+    
+}
+
+.in-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login__input{
+    
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    
+}
+
+.check-remember{
+    display: flex;
+    justify-content:left;
+    
+    gap: 10px;
+}
+
+.remember-title{
+    font-size: clamp(14px, 3vw, 20px);
+}
+
+.login_btn{
+    width: 70%;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: #E91E63;
+}
+
+.register-option{
+    font-size: clamp(16px, 3vw, 20px);
+    display: flex;
+    gap: 10px;
+}
+
+.register-option a{
+    font-size: clamp(14px, 3vw, 20px);
+}
+
+@media (max-width: 374px) {
+
+    .login__form{
+        min-width: 300px;
+    }
+
+    .login__input{
+        width: 150px;
+        font-size: 16px;
+    }
+}

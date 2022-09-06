@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import './formin.css'
 
 
 const FormLogin = () => {
@@ -22,26 +23,43 @@ const FormLogin = () => {
     }
 
   return (
-    <form onSubmit={handleSubmit(submit)} className='login__form'>
-    <h2 className='login__title'>Welcome! Enter your email and password to continue</h2>
-    <div className='login__div-email'>
-      <label className='login__label' htmlFor="email">Email</label>
-      <input 
-      {...register('email')}
-      className='login__input' 
-      type="email"
-       id="email" />
-    </div>
-    <div className='login__div-password'>
-      <label className='login__label' htmlFor="password">Password</label>
-      <input 
-      {...register('password')} 
-      className='login__input'
-       type="password" 
-       id="password" />
-    </div>
-    <button className='login_btn'>Login</button>
-  </form>
+    <section className='container-login'>
+      <form onSubmit={handleSubmit(submit)} className='login__form'>
+        {/* <h2 className='login__title'>Welcome! Enter your email and password to continue</h2> */}
+        <div className="in-user">
+          <div className='login__div-email'>
+            <label className='login__label' htmlFor="email"></label>
+            <input 
+            {...register('email')}
+            className='login__input' 
+            type="email"
+            id="email" 
+            placeholder='Username'/>
+            
+          </div>
+          <div className='login__div-password'>
+            <label className='login__label' htmlFor="password"></label>
+            <input 
+            {...register('password')} 
+            className='login__input'
+            type="password" 
+            id="password"
+            placeholder='Password'/>
+          </div>
+        </div>
+        <div className='check-remember'>
+          <input type="checkbox" />
+          <h3 className='remember-title'>Remember password</h3>
+        </div>
+        <button className='login_btn'>LOGIN</button>
+        <div className="register-option">
+          <h3>Not Registered?</h3>
+          <a href="#">Sign Up</a>
+        </div>
+        
+      </form>
+    </section>
+    
 
   )
 }
