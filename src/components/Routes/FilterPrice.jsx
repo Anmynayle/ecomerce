@@ -21,22 +21,22 @@ useEffect(() => {
   .catch(err=> console.log(err))
 }, [])
 
-const handleFilter = (name) =>{
-  let arrProductsCategory=[];
-   products.forEach(product => {
-    if(product.category.name.includes(name)){
-      arrProductsCategory.push(product)
-    }
-   setSearchProduct(arrProductsCategory)
-   });
- }
+// const handleFilter = (name) =>{
+//   let arrProductsCategory=[];
+//    products.forEach(product => {
+//     if(product.category.name.includes(name)){
+//       arrProductsCategory.push(product)
+//     }
+//    setSearchProduct(arrProductsCategory)
+//    });
+//  }
 
 
  const handleFilterPrice = e =>{
   e.preventDefault()
      let searchPrice= (e.target.from.value)
     let arrProductsPrice=[];
-    let newarr = products.filter(pro => pro.price <= searchPrice);
+    let newarr = products.filter(pro => pro.price >= searchPrice);
     setSearchProduct(newarr)
   //   products.forEach(producPrice => {
   //   if(producPrice.price.includes(searchPrice)){
@@ -45,6 +45,7 @@ const handleFilter = (name) =>{
   // setSearchProduct(arrProductsPrice)
   //  });
  }
+ //holaaa
 
 console.log(searchProduct)
   return (
@@ -70,11 +71,11 @@ console.log(searchProduct)
         <h2>Category</h2>
          <div className="filter__line" />
          <ul className='filter__list'>
-         {
+         {/* {
           category?.map(cat=>(
             <li onClick={()=>handleFilter(cat.name)} key={cat.id}>{cat.name}</li>
           ))
-         }
+         } */}
          </ul>
          </div>
     </div>
