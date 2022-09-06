@@ -10,6 +10,7 @@ import Headers from './components/Routes/share/Headers'
 import ProtectedRoutes from './components/Routes/share/ProtectedRoutes'
 import Layout from './components/Routes/share/Layout'
 import axios from 'axios'
+import Cart from './components/Routes/share/Cart'
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Route path='/purshase' element={<Purshase />} />
           </Route>
       </Route>
-
+      <Route path='/cart' element={<Cart />} />
     </Routes>
     </div>
     
