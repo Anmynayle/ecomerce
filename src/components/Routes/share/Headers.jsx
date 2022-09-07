@@ -39,7 +39,9 @@ console.log(cartHidden)
           </li>
           <div className="line"/>
           <li className="header__item">
-          <i onClick={handleCart} className='bx bx-cart-add'></i>
+          <NavLink className={({isActive})=> isActive ? 'active-link':''} to="/cart">
+          <i  className='bx bx-cart-add'></i>
+          </NavLink>
           </li>
           <div className="line"/>
         </ul>

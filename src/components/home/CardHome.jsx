@@ -1,22 +1,39 @@
+import axios from 'axios'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import getConfig from '../../utils/getConfig'
 import './CardHome.css'
 
 
 const CardHome = ({produc}) => {
 
-
-
+    const isLogged = localStorage.getItem('token')
  
 const navigate = useNavigate()
-
-
 
 const handleClick=()=>{
     navigate(`/product/${produc.id}`)
 }
-
-
+///agrega producto al cart
+const handleAddCart= e =>{
+    e.stopPropagation() 
+    if(isLogged){
+    const url= `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+    const obj={
+        id: produc.id,
+        quantity:1
+    }
+    axios.post(url,obj, getConfig())
+    .then(res=>console.log(res.data))
+    .catch(err => console.log(err))
+}else {
+    
+    if (confirm('Para agregar productos debe loguearse') == true) {
+        navigate(`/login/`)
+      } 
+      
+}
+}
 
   return (
 
@@ -30,7 +47,7 @@ const handleClick=()=>{
                 <h4 className='card_home_price_label'>Price</h4>
                  <span className='card_home_price_value'>$ {produc.price}</span>
             </section>
-            <button className='card_home_btn'> <i className='bx bx-cart-add'></i></button>
+            <button onClick={handleAddCart} className='card_home_btn'> <i className='bx bx-cart-add'></i></button>
         </div>
     </article>
   )
