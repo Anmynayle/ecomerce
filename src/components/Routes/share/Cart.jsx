@@ -4,7 +4,7 @@ import getConfig from '../../../utils/getConfig'
 import ProductCartInfo from '../../cart/ProductCartInfo'
 
 
-const Cart = ({cartHidden,setCartHidden}) => {
+const Cart = ({cartHidden,setCartHidden, counter}) => {
 
   const [cartProducts, setCartProducts] = useState()
 
@@ -18,7 +18,7 @@ const Cart = ({cartHidden,setCartHidden}) => {
 
   useEffect(() => {
     getAllProductsCart()
-  }, [cartProducts])
+  }, [cartProducts, counter])
 
   const handleCheckout = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'

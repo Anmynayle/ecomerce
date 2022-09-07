@@ -66,6 +66,9 @@ const handleFilter = (name) =>{
       console.log(newarr.length)
       setSearchProduct(newarr)
     }
+     else {
+        setSearchProduct()
+     }
 
 
   }

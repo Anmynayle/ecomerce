@@ -7,7 +7,7 @@ import './Home.css'
 import SideBar from './share/SideBar'
 
 
-const Home = ({searchProduct,setSearchProduct}) => {
+const Home = ({searchProduct,setSearchProduct, setCounter}) => {
 
   const [cartClose, setCartClose] = useState()
 
@@ -25,7 +25,7 @@ return (
       <Search searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
       <div className="homeContainerCard">
    
-        {!searchProduct  ? <CardContainer products={products}/> :<CardContainer products={searchProduct}/> } 
+        {!searchProduct  ? <CardContainer setCounter={setCounter} products={products}/> :<CardContainer setCounter={setCounter} products={searchProduct}/> } 
       
       </div>
       

@@ -5,7 +5,7 @@ import getConfig from '../../utils/getConfig'
 import './CardHome.css'
 
 
-const CardHome = ({produc}) => {
+const CardHome = ({produc, setCounter}) => {
 
     const isLogged = localStorage.getItem('token')
  
@@ -24,7 +24,10 @@ const handleAddCart= e =>{
         quantity:1
     }
     axios.post(url,obj, getConfig())
-    .then(res=>console.log(res.data))
+.then(res=>{
+    console.log(res.data)
+    setCounter(e => e + 1)
+})
     .catch(err => console.log(err))
 }else {
     

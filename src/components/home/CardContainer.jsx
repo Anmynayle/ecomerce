@@ -1,7 +1,7 @@
 import React from 'react'
 import CardHome from './CardHome'
 
-const CardContainer = ({products}) => {
+const CardContainer = ({products, setCounter}) => {
 
 
     return (
@@ -10,6 +10,7 @@ const CardContainer = ({products}) => {
             <CardHome
              key={produc.id}
              produc={produc}
+             setCounter={setCounter}
             />
         ))
    }   
