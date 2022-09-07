@@ -1,0 +1,54 @@
+.purshase{
+    border: 1px solid rgb(224, 221, 221);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container_purshase{
+ border: 1px solid rgb(224, 221, 221);
+ border-radius: 20px;
+ 
+}
+.container__header{
+  border-bottom: 1px solid rgb(224, 221, 221);
+  padding: 30px;
+}
+.purshase_info{
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+.purshase_body{
+    display: flex;
+    align-items: center;
+    padding: 30px 10px 10px;
+}
+.purshaseItem{
+    align-items: center;
+    cursor: pointer;
+    display:flex;
+    height: 60px;
+    margin-bottom: 20px;
+   
+}
+.name{
+    font-size: 16px;
+    width: 40%;
+}
+.quuantity_purshase{
+    padding: 0 10px;
+    width: 23%;
+}
+.box_quantity{
+    border: 1px solid rgb(235, 229, 229);
+    margin: 0 auto;
+    max-width: 65px;
+    text-align: center;
+}
+.price{
+   text-align: center;
+   width: 17%; 
+
+}
+
