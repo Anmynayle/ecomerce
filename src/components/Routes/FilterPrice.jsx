@@ -43,13 +43,21 @@ const handleFilter = (name) =>{
       console.log(newarr.length)
       setSearchProduct(newarr)
 
+
     } else if (e.target.from.value && e.target.to.value) {
-      let searchPriceFrom = (e.target.from.value)
-      let searchPriceTo = (e.target.to.value)
-      let arrProductsPrice = [];
-      // let newarr = products.filter(pro => pro.price <= parseInt(searchPriceFrom, 10) &&  parseInt(searchPriceTo, 10);
-      console.log(newarr.length)
-      setSearchProduct(newarr)
+        let searchPriceFrom = (e.target.from.value)
+        let searchPriceTo = (e.target.to.value)
+
+        let arrProductsRange = [];
+        let newarr = products.filter(product => {
+          if(product.price >=  parseInt(searchPriceFrom, 10)){
+              if(product.price <=  parseInt(searchPriceTo, 10)){
+                  arrProductsRange.push(product)
+              }
+          }
+        })
+        setSearchProduct(arrProductsRange)
+        console.log(arrProductsRange)
 
     } else if (!e.target.from.value && e.target.to.value) {
       let searchPrice = (e.target.to.value)
@@ -61,7 +69,6 @@ const handleFilter = (name) =>{
 
 
   }
-
 
 console.log(searchProduct)
   return (
