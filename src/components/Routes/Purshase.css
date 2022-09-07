@@ -33,8 +33,8 @@
    
 }
 .name{
-    font-size: 16px;
-    width: 40%;
+    font-size: 20px;
+    
 }
 .quuantity_purshase{
     padding: 0 10px;
@@ -46,9 +46,10 @@
     max-width: 65px;
     text-align: center;
 }
-.price{
+.price_purshase{
    text-align: center;
    width: 17%; 
+   font-size: 20px;
 
 }
 

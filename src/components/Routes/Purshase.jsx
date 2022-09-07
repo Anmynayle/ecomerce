@@ -38,7 +38,7 @@ const [purshase, setPurshase] = useState()
                       {produ.productsInCart.quantity}
                     </div>
                     </div>
-                    <div className="price">
+                    <div className="price_purshase">
                       ${produ.price}
                     </div>
                  
