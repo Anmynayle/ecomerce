@@ -11,15 +11,13 @@ const FormLogin = ({setIsLooged}) => {
    
     const navigate = useNavigate()
     const submit =(data) => {
-        // console.log(data)
         const url= `https://ecommerce-api-react.herokuapp.com/api/v1/users/login`
         axios.post(url , data)
         .then(res=>{
-            // console.log(res.data)
             navigate('/')
+            console.log(res.data.data.user)
             localStorage.setItem('token',res.data.data.token)})
-            setIsLooged(res.data.data.user)
-            .catch(err =>console.log(err))
+            .catch(err =>alert("invalid"))
         reset({
             email:'',
              password:''
@@ -29,7 +27,7 @@ const FormLogin = ({setIsLooged}) => {
   return (
     <section className='container-login'>
       <form onSubmit={handleSubmit(submit)} className='login__form'>
-        {/* <h2 className='login__title'>Welcome! Enter your email and password to continue</h2> */}
+        <h2 className='login__title'>Welcome! Enter your email and password to continue</h2> 
         <div className="in-user">
           <div className='login__div-email'>
             <label className='login__label' htmlFor="email"></label>

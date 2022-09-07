@@ -4,14 +4,24 @@ import Header from  './Header.css'
 
 const Headers = ({setSidenBarHidden, sidenBarHidden, cartHidden, setCartHidden}) => {
 
+  const isLogged = localStorage.getItem('token')
+ 
 
 const handleSideBar= () => {
   setSidenBarHidden(!sidenBarHidden)
 }
 
+
 const handleCart= () => {
-  console.log(cartHidden)
-  setCartHidden(!cartHidden)
+  if(isLogged){
+   setCartHidden(!cartHidden)
+}else{
+  if (confirm('Para visualizar product debe loguearse') == true) {
+    navigate(`/login/`)
+  } 
+}
+
+
 }
 
 console.log(cartHidden)
@@ -39,9 +49,9 @@ console.log(cartHidden)
           </li>
           <div className="line"/>
           <li className="header__item">
-          <NavLink className={({isActive})=> isActive ? 'active-link':''} to="/cart">
-          <i  className='bx bx-cart-add'></i>
-          </NavLink>
+          {/* <NavLink className={({isActive})=> isActive ? 'active-link':''} to="/cart"> */}
+          <i onClick={handleCart}  className='bx bx-cart-add'></i>
+          {/* </NavLink> */}
           </li>
           <div className="line"/>
         </ul>

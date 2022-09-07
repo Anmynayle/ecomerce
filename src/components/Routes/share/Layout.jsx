@@ -4,6 +4,8 @@ import SideBar from './SideBar'
 import Headers from './Headers'
 import './Layout.css'
 import { useState } from 'react'
+import Cart from './Cart'
+
 const Layoud = ({searchProduct, setSearchProduct}) => {
 
   const [sidenBarHidden, setSidenBarHidden] = useState(false)
@@ -15,11 +17,7 @@ const Layoud = ({searchProduct, setSearchProduct}) => {
         <Headers  cartHidden={cartHidden} setCartHidden={setCartHidden} sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}/>
         <SideBar sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}
                   searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
-       
-        <div className={`produc ${cartHidden ? 'container-cart-none' : ''}`}>
-          <h1>hola</h1>
-        </div>
-    
+        <Cart cartHidden={cartHidden} setCartHidden={setCartHidden} />
         <div className="main">
           
         <Outlet/>

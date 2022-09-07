@@ -4,9 +4,10 @@ import getConfig from '../../../utils/getConfig'
 import ProductCartInfo from '../../cart/ProductCartInfo'
 
 
-const Cart = () => {
+const Cart = ({cartHidden,setCartHidden}) => {
 
   const [cartProducts, setCartProducts] = useState()
+
 
   const getAllProductsCart = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
@@ -17,7 +18,7 @@ const Cart = () => {
 
   useEffect(() => {
     getAllProductsCart()
-  }, [])
+  }, [cartProducts])
 
   const handleCheckout = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
@@ -37,6 +38,7 @@ const Cart = () => {
   }
 
   return (
+    <div className={`produc ${cartHidden ? 'container-cart-none' : ''}`}>
     <section className='cart'>
       <h2 className='cart__title'>Cart</h2>
       <div className='cart__container-item'>
@@ -57,7 +59,9 @@ const Cart = () => {
         <button onClick={handleCheckout} className='cart__btn'>Checkout</button>
       </footer>
     </section>
+  </div>
   )
 }
 
+   
 export default Cart

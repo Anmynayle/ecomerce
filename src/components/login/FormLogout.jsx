@@ -9,7 +9,7 @@ const FormLogout = ({isLogged, setIsLooged}) => {
   }
 
   return (
-    <article className='form-logout'>
+    <article className='container-login'>
       <i className="form-logout__icon fa-solid fa-user"></i>
       <h2 className='form-logout__username'>
         {`${isLogged?.firstName} ${isLogged?.lastName}`}
