@@ -16,6 +16,7 @@ const Cart = ({cartHidden,setCartHidden, counter}) => {
       .then(res => {
         const products= (res.data.data.cart.products)
         setCartProducts(res.data.data.cart.products)
+        //total a pagar en el cart
         const total = products.reduce((acc, cv)=> {
           return Number(cv.price) * cv.productsInCart.quantity + acc
         },0) 
