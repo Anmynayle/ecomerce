@@ -2,9 +2,9 @@
   width: 100%;
   max-width: 400px;
   display: grid;
-  grid-template-columns: 1fr 80px;
+  grid-template-columns: 1fr 70px;
   row-gap: 20px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   background-color:transparent;
   box-shadow: 0 0 10px #0005;
@@ -36,4 +36,10 @@
 .cart__item-footer{
   display: flex;
   justify-content: space-between;
+}
+.cart__total-number::before{
+  content: '$';
+}
+span{
+  font-size: 15px;
 }
