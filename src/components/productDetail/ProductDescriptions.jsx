@@ -65,7 +65,9 @@ const handleAddCartDet= () =>{
       </div>
 
       <div className="product-info">
-        <div className="col1">carrusel</div>
+        <div className="col1">
+         <img src={productInfo?.productImgs[0]} alt="" />
+        </div>
         <div className="col2">
           <h2>{productInfo?.title}</h2>
           <div className="product-data">
