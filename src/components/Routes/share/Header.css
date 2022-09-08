@@ -24,10 +24,16 @@ a{
 
 
 .header__logo {
-    color: brown;
+    color: #a52a2a;
     text-decoration: none;
     display: flex;
     flex-direction: column;
+}
+.logo-img{
+
+    height: 40px;
+
+    
 }
 
 .header__item{
