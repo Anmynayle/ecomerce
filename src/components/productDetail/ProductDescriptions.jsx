@@ -1,21 +1,46 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './productDes.css'
+import axios  from 'axios'
+import getConfig from '../../utils/getConfig'
 
 
-
-const ProductDescriptions = ({ productInfo }) => {
+const ProductDescriptions = ({ productInfo, setCounter }) => {
   const [count, setCount] = useState(1)
+
+  const isLogged = localStorage.getItem('token')
 
   const handlePlus = () => setCount(count + 1)
   
+
 
   const handleMinus = () => {
     if (count - 1 >= 1) {
       setCount(count - 1)
     }
   }
-
+  const handleAddCartDet= e =>{
+    if(isLogged){
+    
+    const url= `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+    const obj={
+        id: productInfo.id,
+        quantity:{count}
+    }
+    axios.post(url,obj, getConfig())
+.then(res=>{
+    console.log(res.data)
+    setCounter(e => e + 1)
+})
+    .catch(err => console.log(err))
+}else {
+    
+    if (confirm('Para agregar productos debe loguearse') == true) {
+        navigate(`/login/`)
+      } 
+      
+}
+}
   // console.log(productInfo)
   return (
 
@@ -42,15 +67,15 @@ const ProductDescriptions = ({ productInfo }) => {
                 <h3>Quanty</h3>
                 <div className="option-quanty">
                   <button onClick={handleMinus}>-</button>
-                  <div className='val'>{count}</div>
-                  {/* <input type="text"/> */}
+                  {/* <div id='valor' className='val'>{count}</div> */}
+                  <input    className='val' type="text" placeholder={count}/>  
                   <button onClick={handlePlus}>+</button>
                 </div>
               </div>
             </div>
-            <button className='add-card-btn'>Add to Card</button>
+            <button onClick={handleAddCartDet} className='add-card-btn'>Add to Cart</button>
           </div>
-          
+    
           
         </div>
       </div>

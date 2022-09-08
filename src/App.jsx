@@ -13,6 +13,7 @@ import Cart from './components/Routes/share/Cart'
 function App() {
   
   const [searchProduct, setSearchProduct] = useState()
+  const [counter, setCounter] = useState(0)
   
 
   // useEffect(() => {
@@ -37,12 +38,12 @@ function App() {
      
       <Routes>
         <Route path='/login' element={<Login/>}/>
-        <Route element={<Layout searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
-        <Route path='/' element={<Home searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
-        <Route path='/product/:id' element={<ProductDetail/>}/>
+        <Route element={<Layout counter={counter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
+        <Route path='/' element={<Home setCounter={setCounter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
+        <Route path='/product/:id' element={<ProductDetail setCounter={setCounter} />}/>
       </Route>
       <Route element={<ProtectedRoutes />}>
-          <Route element={<Layout  searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
+          <Route element={<Layout counter={counter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
           <Route path='/purshase' element={<Purshase />} />
           {/* <Route path='/cart' element={<Cart />} /> */}
       </Route>

@@ -6,7 +6,7 @@ import './Layout.css'
 import { useState } from 'react'
 import Cart from './Cart'
 
-const Layoud = ({searchProduct, setSearchProduct}) => {
+const Layoud = ({searchProduct, setSearchProduct, counter}) => {
 
   const [sidenBarHidden, setSidenBarHidden] = useState(false)
   const [cartHidden, setCartHidden] = useState(true)
@@ -17,7 +17,7 @@ const Layoud = ({searchProduct, setSearchProduct}) => {
         <Headers  cartHidden={cartHidden} setCartHidden={setCartHidden} sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}/>
         <SideBar sidenBarHidden={sidenBarHidden} setSidenBarHidden={setSidenBarHidden}
                   searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
-        <Cart cartHidden={cartHidden} setCartHidden={setCartHidden} />
+        <Cart counter={counter} cartHidden={cartHidden} setCartHidden={setCartHidden} />
         <div className="main">
           
         <Outlet/>

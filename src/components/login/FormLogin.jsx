@@ -17,7 +17,7 @@ const FormLogin = ({setIsLooged}) => {
             navigate('/')
             console.log(res.data.data.user)
             localStorage.setItem('token',res.data.data.token)})
-            .catch(err =>alert("invalid"))
+            .catch(err =>alert("Invalid Credential"))
         reset({
             email:'',
              password:''

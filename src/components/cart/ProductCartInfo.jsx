@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import getConfig from '../../utils/getConfig'
+import './productCardInfo.css'
 
 
 
@@ -19,7 +20,7 @@ const ProductCartInfo = ({product, getAllProductsCart}) => {
         <h4 className='cart__category'>{product.brand}</h4>
         <h3 className='cart__name'>{product.title}</h3>
       </header>
-      <i onClick={handleDeleteProduct} className="cart__trash fa-regular fa-trash-can"></i>
+      <i onClick={handleDeleteProduct} className='cart__trash bx bx-trash'></i>
       <span className='cart__quantity'>{product.productsInCart.quantity}</span>
       <footer className='cart__item-footer'>
         <span className='cart__total-label'>Total:</span>

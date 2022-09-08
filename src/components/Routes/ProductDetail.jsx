@@ -5,7 +5,7 @@ import axios from 'axios'
 import ProductDescriptions from '../productDetail/ProductDescriptions'
 import ProductSimilar from './ProductSimilar'
 
-const ProductDetail = () => {
+const ProductDetail = ({setCounter}) => {
 
 
   const [productInfo, setProductInfo] = useState()
@@ -23,6 +23,7 @@ const ProductDetail = () => {
     <div>
       <ProductDescriptions
       productInfo={productInfo}
+      setCounter={setCounter}
       />
       <div>
         <ProductSimilar productInfo={productInfo}/>

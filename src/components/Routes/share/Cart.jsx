@@ -2,9 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import getConfig from '../../../utils/getConfig'
 import ProductCartInfo from '../../cart/ProductCartInfo'
+import './card.css'
 
-
-const Cart = ({cartHidden,setCartHidden}) => {
+const Cart = ({cartHidden,setCartHidden, counter}) => {
 
   const [cartProducts, setCartProducts] = useState()
 
@@ -18,7 +18,7 @@ const Cart = ({cartHidden,setCartHidden}) => {
 
   useEffect(() => {
     getAllProductsCart()
-  }, [cartProducts])
+  }, [ counter])
 
   const handleCheckout = () => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
@@ -36,6 +36,9 @@ const Cart = ({cartHidden,setCartHidden}) => {
       })
       .catch(err => console.log(err))
   }
+
+   
+  const sum = cartProducts?.map(item=>item.price).reduce((prev, curr)=> prev + curr,0)
 
   return (
     <div className={`produc ${cartHidden ? 'container-cart-none' : ''}`}>
@@ -55,7 +58,10 @@ const Cart = ({cartHidden,setCartHidden}) => {
       <hr className='cart__hr' />
       <footer className='cart__footer'>
         <span className='cart__total-global-label'>Total:</span>
-        <p className='cart__total-global-value'>1350</p>
+        <p className='cart__total-global-value'>
+         {sum}
+
+        </p>
         <button onClick={handleCheckout} className='cart__btn'>Checkout</button>
       </footer>
     </section>

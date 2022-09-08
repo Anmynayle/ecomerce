@@ -5,62 +5,55 @@ import getConfig from '../../utils/getConfig'
 import './CardHome.css'
 
 
-const CardHome = ({ produc }) => {
+const CardHome = ({produc, setCounter}) => {
 
     const isLogged = localStorage.getItem('token')
+ 
+const navigate = useNavigate()
 
-    const navigate = useNavigate()
-
-    const getAllProductsCart = () => {
-        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
-        axios.get(URL, getConfig())
-            .then(res => setCartProducts(res.data.data.cart.products))
-            .catch(err => setCartProducts())
+const handleClick=()=>{
+    navigate(`/product/${produc.id}`)
+}
+///agrega producto al cart
+const handleAddCart= e =>{
+    e.stopPropagation() 
+    if(isLogged){
+    const url= `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+    const obj={
+        id: produc.id,
+        quantity:1
     }
-
-    const handleClick = () => {
-        navigate(`/product/${produc.id}`)
-    }
-    ///agrega producto al cart
-    const handleAddCart = e => {
-        e.stopPropagation()
-        if (isLogged) {
-            const url = `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
-            const obj = {
-                id: produc.id,
-                quantity: 1
-            }
-            axios.post(url, obj, getConfig())
-                .then(res => {
-                    getAllProductsCart()
-                    console.log(res.data)
-                })
-                .catch(err => console.log(err))
-        } else {
-
-            if (confirm('Para agregar productos debe loguearse') == true) {
-                navigate(`/login/`)
-            }
-
-        }
-    }
-
-    return (
-
-        <article onClick={handleClick} className='card__home'>
-            <header className='card__home__header'>
-                <img src={produc.productImgs[0]} alt="" />
-            </header>
-            <div className="card_home_body">
-                <h3 className='card_home_name'>{produc.title}</h3>
-                <section className='card_home_price'>
-                    <h4 className='card_home_price_label'>Price</h4>
-                    <span className='card_home_price_value'>$ {produc.price}</span>
-                </section>
-                <button onClick={handleAddCart} className='card_home_btn'> <i className='bx bx-cart-add'></i></button>
-            </div>
-        </article>
-    )
+    axios.post(url,obj, getConfig())
+.then(res=>{
+    alert("added product")
+    setCounter(e => e + 1)
+})
+    .catch(err =>  alert("You already added this product to the cart"))
+   
+}else {
+    
+    if (confirm('Para agregar productos debe loguearse') == true) {
+        navigate(`/login/`)
+      } 
+      
+}
 }
 
+  return (
+
+      <article  onClick={handleClick} className='card__home'>
+        <header className='card__home__header'>
+            <img src={produc.productImgs[0]} alt="" />
+        </header>
+        <div className="card_home_body">
+            <h3 className='card_home_name'>{produc.title}</h3>
+            <section className='card_home_price'>
+                <h4 className='card_home_price_label'>Price</h4>
+                 <span className='card_home_price_value'>$ {produc.price}</span>
+            </section>
+            <button onClick={handleAddCart} className='card_home_btn'> <i className='bx bx-cart-add'></i></button>
+        </div>
+    </article>
+  )
+}
 export default CardHome

@@ -66,7 +66,10 @@ const handleFilter = (name) =>{
       console.log(newarr.length)
       setSearchProduct(newarr)
     }
-    return newarr
+     else {
+        setSearchProduct()
+     }
+
 
   }
 
