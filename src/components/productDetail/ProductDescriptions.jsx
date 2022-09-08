@@ -59,7 +59,7 @@ const handleAddCartDet= () =>{
     <section className='product__descri'>
 
       <div className='history'>
-        <a href="#">Home</a>
+      <i className='bx bx-home'></i>
         <div className='sepator'>O</div>
         <b>{productInfo?.title}</b>
       </div>
