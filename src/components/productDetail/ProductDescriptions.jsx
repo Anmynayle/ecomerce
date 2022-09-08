@@ -67,7 +67,6 @@ const ProductDescriptions = ({ productInfo, setCounter }) => {
                 <h3>Quanty</h3>
                 <div className="option-quanty">
                   <button onClick={handleMinus}>-</button>
-                  {/* <div id='valor' className='val'>{count}</div> */}
                   <input    className='val' type="text" placeholder={count}/>  
                   <button onClick={handlePlus}>+</button>
                 </div>
