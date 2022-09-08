@@ -37,3 +37,35 @@
 .search button i{
     color: white;
 }
+
+@media (max-width: 800px) {
+    .search input {
+        width: 80%;
+       
+    }
+     
+  }
+  @media (max-width: 450px) {
+    .search  {
+        padding-left: 5px;
+       
+    }
+     
+  }
+
+  @media (max-width: 350px) {
+    .search  {
+        padding: 0px;
+
+       
+    }
+    .search input {
+        width: 50%;
+        height: 25px;
+       
+    }
+    .search button{
+       display: none;
+    }
+
+  }

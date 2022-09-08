@@ -1,5 +1,5 @@
 .purshase{
-    border: 1px solid rgb(224, 221, 221);
+   padding-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     padding: 30px 10px 10px;
+    flex-wrap: nowrap;
 }
 .purshaseItem{
     align-items: center;
@@ -53,3 +54,27 @@
 
 }
 
+@media (max-width: 500px) {
+    .name{
+        font-size: 15px;
+        
+    }
+    .price_purshase{
+        text-align: center;
+        width: 20%; 
+        font-size: 15px;
+     
+     }
+  }
+  @media (max-width: 375px) {
+    .name{
+        font-size: 15px;
+        
+    }
+    .price_purshase{
+        text-align: center;
+        width: 25%; 
+        font-size: 15px;
+     
+     }
+  }
