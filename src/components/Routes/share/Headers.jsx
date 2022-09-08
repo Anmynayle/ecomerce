@@ -30,7 +30,7 @@ console.log(cartHidden)
       <div className="header__top">
         <i onClick={handleSideBar} className='bx bx-filter-alt'></i>
       <NavLink className="header__item" to="/">
-        <img className='logo-img' src="src\assets\img\logo-ecomerce.png" alt="" />
+        <img className='logo-img' src="/img/logo-ecomerce.png" alt="" />
         {/* <h1>E-commerce</h1> */}
       </NavLink>
       </div>

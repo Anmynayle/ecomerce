@@ -28,7 +28,7 @@ const FormLogin = ({setIsLooged}) => {
     <section className='container-login'>
       <form onSubmit={handleSubmit(submit)} className='login__form'>
       
-        <img className='lgo-in' src="src\assets\img\logoIn.png" alt="" />
+        <img className='lgo-in' src="/img/logoIn.png" alt="" />
         
         
         <div className="in-user">
