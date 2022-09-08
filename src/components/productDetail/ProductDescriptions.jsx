@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import './productDes.css'
 import axios  from 'axios'
 import getConfig from '../../utils/getConfig'
+import { get } from 'react-hook-form'
 
 
-const ProductDescriptions = ({ productInfo, setCounter }) => {
+const ProductDescriptions = ({ productInfo, setCounter}) => {
   const [count, setCount] = useState(1)
 
   const isLogged = localStorage.getItem('token')
@@ -19,26 +20,37 @@ const ProductDescriptions = ({ productInfo, setCounter }) => {
       setCount(count - 1)
     }
   }
-  const handleAddCartDet= e =>{
-    if(isLogged){
-    
-    const url= `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
-    const obj={
-        id: productInfo.id,
-        quantity:{count}
-    }
-    axios.post(url,obj, getConfig())
+//   const handleAddCartDet= () =>{
+//     const url = `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+//     const obj ={
+//       id: productInfo.id,
+//       quantity:count
+//     }
+//     axios.post(url,obj, getConfig())
+//     .then(res => console.log(res.data))
+//     .catch(err=> console.log(err))
+// }
+
+const handleAddCartDet= () =>{
+  if(isLogged){
+  const url= `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+  const obj={
+      id: productInfo.id,
+      quantity:count
+  }
+  axios.post(url,obj, getConfig())
 .then(res=>{
-    console.log(res.data)
-    setCounter(e => e + 1)
+  alert("added product")
+  setCounter(e => e + 1)
 })
-    .catch(err => console.log(err))
+  .catch(err =>  alert("You already added this product to the cart"))
+ 
 }else {
+  
+  if (confirm('Para agregar productos debe loguearse') == true) {
+      navigate(`/login/`)
+    } 
     
-    if (confirm('Para agregar productos debe loguearse') == true) {
-        navigate(`/login/`)
-      } 
-      
 }
 }
   // console.log(productInfo)
@@ -67,7 +79,7 @@ const ProductDescriptions = ({ productInfo, setCounter }) => {
                 <h3>Quanty</h3>
                 <div className="option-quanty">
                   <button onClick={handleMinus}>-</button>
-                  <input    className='val' type="text" placeholder={count}/>  
+                  <div className='val'>{count}</div>
                   <button onClick={handlePlus}>+</button>
                 </div>
               </div>

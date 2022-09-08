@@ -44,6 +44,7 @@ const Cart = ({cartHidden,setCartHidden, counter}) => {
       .then(res => {
         console.log(res.data)
         getAllProductsCart()
+        setTotalPrice(0)
       })
       .catch(err => console.log(err))
   }
