@@ -27,7 +27,10 @@ const FormLogin = ({setIsLooged}) => {
   return (
     <section className='container-login'>
       <form onSubmit={handleSubmit(submit)} className='login__form'>
-        <h2 className='login__title'>Welcome! Enter your email and password to continue</h2> 
+      
+        <img src="src\assets\img\logoIn.png" alt="" />
+        
+        
         <div className="in-user">
           <div className='login__div-email'>
             <label className='login__label' htmlFor="email"></label>
