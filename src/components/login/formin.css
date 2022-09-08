@@ -2,22 +2,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    
 }
 .login__form{
     border: 1px solid rgb(145, 145, 145);
     width: 450px;
-    height: 400px;
-
+    height: 450px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
     margin: 0 10px;
+    margin-top: 150px;
 
     box-shadow: 5px 5px 15px rgb(159, 157, 157);
     
+}
+
+
+img {
+    width: 100px;
+    position: absolute;
+    top: -30px;
+
 }
 
 .in-user{

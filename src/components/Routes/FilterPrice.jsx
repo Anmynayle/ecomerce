@@ -8,11 +8,7 @@ const FilterPrice = ({searchProduct, setSearchProduct}) => {
 
 const [category, setCategory] = useState()
 
-
-
 const products = useSelector(state =>state.product)
-
-
 
 useEffect(() => {
   const urlcat=`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories`
