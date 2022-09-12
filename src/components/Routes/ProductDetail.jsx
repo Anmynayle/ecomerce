@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 import ProductDescriptions from '../productDetail/ProductDescriptions'
-import ProductSimilar from './ProductSimilar'
+import ProductSimilar from '../productDetail/ProductSimilar'
 
 const ProductDetail = ({setCounter}) => {
 

@@ -1,6 +1,6 @@
 .cart__item{
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   display: grid;
   grid-template-columns: 1fr 70px;
   row-gap: 20px;
@@ -10,8 +10,10 @@
   box-shadow: 0 0 10px #0005;
 }
 .cart__item-header{
-  display: grid;
-  gap: 2px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
 }
 .cart__category {
   font-size: 13px;

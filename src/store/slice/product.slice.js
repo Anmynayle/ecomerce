@@ -22,3 +22,11 @@ export const getAllProduct= () => (dispatch) =>{
     
 }
 
+export const getProductCategory = (id) => (dispatch) =>{
+  const URL =`https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${id}`
+  return axios.get(URL)
+  .then(res=> dispatch(setProduct(res.data.data.products)))
+  .catch(err => console.log(err))
+  
+}
+

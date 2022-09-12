@@ -1,14 +1,16 @@
 import axios from 'axios'
 import React from 'react'
 import { useState,useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProductCategory } from '../../store/slice/product.slice'
 
 
-const FilterPrice = ({searchProduct, setSearchProduct}) => {
+const FilterPrice = ({setSearchProduct}) => {
 
 const [category, setCategory] = useState()
 
-const products = useSelector(state =>state.product)
+
+const dispatch = useDispatch()
 
 useEffect(() => {
   const urlcat=`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories`
@@ -17,17 +19,24 @@ useEffect(() => {
   .catch(err=> console.log(err))
 }, [])
 
-const handleFilter = (name) =>{
-  let arrProductsCategory=[];
-   products.forEach(product => {
-    if(product.category.name.includes(name)){
-      arrProductsCategory.push(product)
-    }
-   setSearchProduct(arrProductsCategory)
-   });
- }
+// const handleFilter = (name) =>{
+//   let arrProductsCategory=[];
+//    products.forEach(product => {
+//     if(product.category.name.includes(name)){
+  //       arrProductsCategory.push(product)
+  //     }
+  //    setSearchProduct(arrProductsCategory)
+  //    });
+  //  }
+  
+  
+  const handleFilter = id => {
+    dispatch(getProductCategory(id))
+  }
+  
+  const products = useSelector(state =>state.product)
 
-
+  console.log(products)
   const handleFilterPrice = e => {
     e.preventDefault()
      let newarr 
@@ -69,7 +78,7 @@ const handleFilter = (name) =>{
 
   }
 
-console.log(searchProduct)
+// console.log(searchProduct)
   return (
     <div  className='filter__Types'>
       <form  onSubmit={handleFilterPrice} className="filter__price">
@@ -93,9 +102,12 @@ console.log(searchProduct)
         <h2>Category</h2>
          <div className="filter__line" />
          <ul className='filter__list'>
+          <li>All</li>
           {
           category?.map(cat=>(
-            <li onClick={()=>handleFilter(cat.name)} key={cat.id}>{cat.name}</li>
+            <li onClick={()=>handleFilter(cat.id)} 
+            key={cat.id}>
+            {cat.name}</li>
           ))
          } 
          </ul>

@@ -4,18 +4,26 @@ import './App.css'
 import Home from './components/Routes/Home'
 import ProductDetail from './components/Routes/ProductDetail'
 import Login from './components/Routes/Login'
-import Purshase from './components/Routes/Purshase'
+import Purshase from './components/Routes/purshases/Purshase'
 import ProtectedRoutes from './components/Routes/ProtectedRoutes'
 import Layout from './components/Routes/share/Layout'
 import Cart from './components/Routes/share/Cart'
+import { useDispatch } from 'react-redux'
+import {getAllProduct} from './store/slice/product.slice'
 
 
 function App() {
   
-  const [searchProduct, setSearchProduct] = useState()
+  const [searchProduct, setSearchProduct] = useState('')
+  const [filterProduts, setFilterProduts] = useState()
   const [counter, setCounter] = useState(0)
   
+  
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getAllProduct())
+}, [])
   // useEffect(() => {
   //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
   //   // const obj = {
@@ -39,7 +47,7 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login/>}/>
         <Route element={<Layout counter={counter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
-        <Route path='/' element={<Home setCounter={setCounter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
+        <Route path='/' element={<Home filterProduts={filterProduts} setFilterProduts={setFilterProduts} setCounter={setCounter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
         <Route path='/product/:id' element={<ProductDetail setCounter={setCounter} />}/>
       </Route>
       <Route element={<ProtectedRoutes />}>

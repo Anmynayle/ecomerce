@@ -1,36 +1,50 @@
 import React, { useEffect,useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllProduct } from '../../store/slice/product.slice'
 import CardContainer from '../home/CardContainer'
+import CardHome from '../home/CardHome'
 import Search from '../home/Search'
 import './Home.css'
 import SideBar from './share/SideBar'
+import { useSelector } from 'react-redux'
 
 
-const Home = ({searchProduct,setSearchProduct, setCounter}) => {
-
-  const [cartClose, setCartClose] = useState()
-
-   const dispatch = useDispatch()
+const Home = ({searchProduct,setSearchProduct, setCounter, filterProduts, setFilterProduts}) => {
 
   const products =useSelector(state => state.product)
-    useEffect(() => {
-      dispatch(getAllProduct())
-    }, [])
-    
+// PARA QUE PINTE SOLO LO FILTRADO EN LA BUSQUEDA
+  useEffect(() => {
+        const filter = products?.filter(e => e.title.includes(searchProduct))
+         setFilterProduts(filter)
+   }, [searchProduct])
+
 
 return (
     <div className='home'>
-    
       <Search searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>
       <div className="homeContainerCard">
-   
-        {!searchProduct  ? <CardContainer setCounter={setCounter} products={products}/> :<CardContainer setCounter={setCounter} products={searchProduct}/> } 
-      
-      </div>
-      
+    {
+      filterProduts ?
+        filterProduts?.map(produc =>(
+            <CardHome
+             key={produc.id}
+             produc={produc}
+             setCounter={setCounter}
+            />
+        ))
+    :
+      products?.map(produc =>(
+      <CardHome
+       key={produc.id}
+       produc={produc}
+       setCounter={setCounter}
+      />
+  ))
+   }   
     </div>
-  )
+
+         {/* {!searchProduct  ? <CardContainer setCounter={setCounter} products={products}/> :<CardContainer setCounter={setCounter} products={searchProduct}/> }   */}
+    </div>
+
+)
 }
-//prueba
+
 export default Home
