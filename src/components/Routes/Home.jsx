@@ -12,8 +12,12 @@ const Home = ({searchProduct,setSearchProduct, setCounter, filterProduts, setFil
   const products =useSelector(state => state.product)
 // PARA QUE PINTE SOLO LO FILTRADO EN LA BUSQUEDA
   useEffect(() => {
+    if(searchProduct.length !== 0){
         const filter = products?.filter(e => e.title.includes(searchProduct))
          setFilterProduts(filter)
+    }else {
+      setFilterProduts('')
+    }
    }, [searchProduct])
 
 

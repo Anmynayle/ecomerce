@@ -2,15 +2,16 @@ import axios from 'axios'
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductCategory } from '../../store/slice/product.slice'
+import { getAllProduct, getProductCategory } from '../../store/slice/product.slice'
 
 
 const FilterPrice = ({setSearchProduct}) => {
+  
+  const [category, setCategory] = useState()
+  
+  const products = useSelector(state =>state.product)
 
-const [category, setCategory] = useState()
-
-
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
 useEffect(() => {
   const urlcat=`https://ecommerce-api-react.herokuapp.com/api/v1/products/categories`
@@ -33,10 +34,12 @@ useEffect(() => {
   const handleFilter = id => {
     dispatch(getProductCategory(id))
   }
-  
-  const products = useSelector(state =>state.product)
 
-  console.log(products)
+  const handleFilterAll = () => {
+    dispatch(getAllProduct())
+  }
+  
+
   const handleFilterPrice = e => {
     e.preventDefault()
      let newarr 
@@ -102,7 +105,7 @@ useEffect(() => {
         <h2>Category</h2>
          <div className="filter__line" />
          <ul className='filter__list'>
-          <li>All</li>
+          <li onClick={handleFilterAll}>All</li>
           {
           category?.map(cat=>(
             <li onClick={()=>handleFilter(cat.id)} 
