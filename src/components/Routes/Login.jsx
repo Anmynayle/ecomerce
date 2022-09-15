@@ -20,7 +20,6 @@ const Login = () => {
         isLogged ?
           <FormLogout setIsLooged={setIsLooged} isLogged={isLogged} />
         :
-
         // <Register/>
         <FormLogin setIsLooged={setIsLooged} />
       }

@@ -1,5 +1,4 @@
 import React, { useEffect,useState} from 'react'
-import CardContainer from '../home/CardContainer'
 import CardHome from '../home/CardHome'
 import Search from '../home/Search'
 import './Home.css'
@@ -13,7 +12,7 @@ const Home = ({searchProduct,setSearchProduct, setCounter, filterProduts, setFil
 // PARA QUE PINTE SOLO LO FILTRADO EN LA BUSQUEDA
   useEffect(() => {
     if(searchProduct.length !== 0){
-        const filter = products?.filter(e => e.title.includes(searchProduct))
+        const filter = products?.filter(e => e.title.toLowerCase().includes(searchProduct))
          setFilterProduts(filter)
     }else {
       setFilterProduts('')

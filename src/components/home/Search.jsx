@@ -9,7 +9,7 @@ const Search = ({setSearchProduct}) => {
   const products = useSelector(state =>state.product)
 
   const handleChange = e => {
-    setSearchProduct(e.target.value.trim())
+    setSearchProduct(e.target.value.toLowerCase().trim())
   }
 
 // const handleChange = () =>{

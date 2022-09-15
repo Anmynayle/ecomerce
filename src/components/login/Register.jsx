@@ -17,7 +17,7 @@ const submit  = data => {
     axios.post(URL, data)
     .then(res => {
         console.log(res.data)
-        navigate('/')
+        navigate('/login')
         alert ("User Created")
    })
   .catch(err => console.log(err))
@@ -49,7 +49,7 @@ const submit  = data => {
         </li>
         <li className='form__list'>
             <label htmlFor="phone"><i className='bx bxs-lock-alt'></i></label>
-            <input {...register('phone')}  type="number" id='phone' placeholder='phone' />
+            <input {...register('phone')}  type="text" id='phone' placeholder='phone' />
         </li>
          <li className='form__list'>
             <label htmlFor="role"><i className='bx bxs-user'></i></label>

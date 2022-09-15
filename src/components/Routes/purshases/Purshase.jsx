@@ -16,7 +16,6 @@ const [purshase, setPurshase] = useState()
 
   }, [])
 
-  //  console.log(purshase[0].cart.products)
   
   return (
     <div className='purshase'>
