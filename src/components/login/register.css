@@ -7,16 +7,15 @@
 .regis__form{
     border: 1px solid rgb(145, 145, 145);
     width: 300px;
-    height: 200px;
+    height: 350px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
     margin: 0 10px;
     margin-top: 150px;
-
     box-shadow: 5px 5px 15px rgb(159, 157, 157);
     
 }

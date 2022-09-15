@@ -29,7 +29,7 @@ const submit  = data => {
     <Headers/>
    <div className='container-login'>
    <form onSubmit={handleSubmit(submit)} className='regis__form'>
-   {/* <img className='lgo-in' src="/img/logoIn.png" alt="" /> */}
+    <img className='lgo-in' src="/img/logoIn.png" alt="" /> 
     <ul className='form__list'>
         <li className='form__item'>
             <label htmlFor="firstName"><i className='bx bxs-user'></i></label>
