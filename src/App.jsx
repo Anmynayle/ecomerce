@@ -10,6 +10,7 @@ import Layout from './components/Routes/share/Layout'
 import Cart from './components/Routes/share/Cart'
 import { useDispatch } from 'react-redux'
 import {getAllProduct} from './store/slice/product.slice'
+import Register from './components/login/Register'
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
      
       <Routes>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
         <Route element={<Layout counter={counter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}>
         <Route path='/' element={<Home filterProduts={filterProduts} setFilterProduts={setFilterProduts} setCounter={setCounter} searchProduct={searchProduct} setSearchProduct={setSearchProduct}/>}/>
         <Route path='/product/:id' element={<ProductDetail setCounter={setCounter} />}/>

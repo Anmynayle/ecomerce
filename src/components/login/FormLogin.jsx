@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './formin.css'
 
 
@@ -59,7 +60,8 @@ const FormLogin = ({setIsLooged}) => {
         <button className='login_btn'>LOGIN</button>
         <div className="register-option">
           <h3>Not Registered?</h3>
-          <a href="#">Sign Up</a>
+        <NavLink className="header__item" to="/register">Sign Up</NavLink>
+     
         </div>
         
       </form>

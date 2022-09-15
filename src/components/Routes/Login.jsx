@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FormLogin from '../login/FormLogin'
 import FormLogout from '../login/FormLogout'
+import Register from '../login/Register'
 import Headers from './share/Headers'
 
 
@@ -19,7 +20,9 @@ const Login = () => {
         isLogged ?
           <FormLogout setIsLooged={setIsLooged} isLogged={isLogged} />
         :
-          <FormLogin setIsLooged={setIsLooged} />
+
+        // <Register/>
+        <FormLogin setIsLooged={setIsLooged} />
       }
     </main>
   )
